@@ -3,15 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Test_ModernMonolithicArchitecture.EntityFrameworkCore;
+using ProductCatalog.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
 #nullable disable
 
-namespace TestModernMonolithicArchitecture.Migrations
+namespace ProductCatalog.Migrations
 {
-    [DbContext(typeof(Test_ModernMonolithicArchitectureDbContext))]
-    partial class TestModernMonolithicArchitectureDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ProductCatalogDbContext))]
+    partial class ProductCatalogDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

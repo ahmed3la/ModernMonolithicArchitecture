@@ -2,18 +2,21 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Test_ModernMonolithicArchitecture.EntityFrameworkCore;
+using ProductCatalog.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
 #nullable disable
 
-namespace TestModernMonolithicArchitecture.Migrations
+namespace ProductCatalog.Migrations
 {
-    [DbContext(typeof(Test_ModernMonolithicArchitectureDbContext))]
-    partial class TestModernMonolithicArchitectureDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ProductCatalogDbContext))]
+    [Migration("20231031210420_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -34,11 +34,11 @@ namespace Test_ModernMonolithicArchitecture;
 [DependsOn(
     typeof(Test_ModernMonolithicArchitectureHttpApiModule),
     typeof(AbpAutofacModule),
-    typeof(AbpAspNetCoreMultiTenancyModule),
+    //typeof(AbpAspNetCoreMultiTenancyModule),
     typeof(Test_ModernMonolithicArchitectureApplicationModule),
     typeof(Test_ModernMonolithicArchitectureEntityFrameworkCoreModule),
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
-    typeof(AbpAccountWebOpenIddictModule),
+    //typeof(AbpAccountWebOpenIddictModule),
     typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpSwashbuckleModule)
 )]
@@ -192,12 +192,12 @@ public class Test_ModernMonolithicArchitectureHttpApiHostModule : AbpModule
         app.UseRouting();
         app.UseCors();
         app.UseAuthentication();
-        app.UseAbpOpenIddictValidation();
+        //app.UseAbpOpenIddictValidation();
 
-        if (MultiTenancyConsts.IsEnabled)
-        {
-            app.UseMultiTenancy();
-        }
+        //if (MultiTenancyConsts.IsEnabled)
+        //{
+        //    app.UseMultiTenancy();
+        //}
 
         app.UseUnitOfWork();
         app.UseAuthorization();

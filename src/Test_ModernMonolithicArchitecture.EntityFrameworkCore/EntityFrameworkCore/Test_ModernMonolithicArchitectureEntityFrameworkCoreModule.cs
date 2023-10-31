@@ -38,12 +38,12 @@ namespace Test_ModernMonolithicArchitecture.EntityFrameworkCore;
 
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddAbpDbContext<Test_ModernMonolithicArchitectureDbContext>(options =>
-        {
-                /* Remove "includeAllEntities: true" to create
-                 * default repositories only for aggregate roots */
-            options.AddDefaultRepositories(includeAllEntities: true);
-        });
+        //context.Services.AddAbpDbContext<Test_ModernMonolithicArchitectureDbContext>(options =>
+        //{
+        //        /* Remove "includeAllEntities: true" to create
+        //         * default repositories only for aggregate roots */
+        //    //options.AddDefaultRepositories(includeAllEntities: true);
+        //});
 
         Configure<AbpDbContextOptions>(options =>
         {

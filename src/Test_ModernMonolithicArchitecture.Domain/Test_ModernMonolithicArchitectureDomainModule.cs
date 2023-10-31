@@ -19,17 +19,17 @@ using ProductCatalog;
 namespace Test_ModernMonolithicArchitecture;
 
 [DependsOn(
-    typeof(Test_ModernMonolithicArchitectureDomainSharedModule),
-    typeof(AbpAuditLoggingDomainModule),
-    typeof(AbpBackgroundJobsDomainModule),
-    typeof(AbpFeatureManagementDomainModule),
-    typeof(AbpIdentityDomainModule),
-    typeof(AbpOpenIddictDomainModule),
-    typeof(AbpPermissionManagementDomainOpenIddictModule),
-    typeof(AbpPermissionManagementDomainIdentityModule),
-    typeof(AbpSettingManagementDomainModule),
-    typeof(AbpTenantManagementDomainModule),
-    typeof(AbpEmailingModule)
+    typeof(Test_ModernMonolithicArchitectureDomainSharedModule)
+    //typeof(AbpAuditLoggingDomainModule),
+    //typeof(AbpBackgroundJobsDomainModule),
+    //typeof(AbpFeatureManagementDomainModule),
+    //typeof(AbpIdentityDomainModule),
+    //typeof(AbpOpenIddictDomainModule),
+    //typeof(AbpPermissionManagementDomainOpenIddictModule),
+    //typeof(AbpPermissionManagementDomainIdentityModule),
+    //typeof(AbpSettingManagementDomainModule),
+    //typeof(AbpTenantManagementDomainModule),
+    //typeof(AbpEmailingModule)
 )]
 [DependsOn(typeof(ProductCatalogDomainModule))]
     public class Test_ModernMonolithicArchitectureDomainModule : AbpModule
@@ -58,10 +58,10 @@ namespace Test_ModernMonolithicArchitecture;
             options.Languages.Add(new LanguageInfo("es", "es", "Español"));
         });
 
-        Configure<AbpMultiTenancyOptions>(options =>
-        {
-            options.IsEnabled = MultiTenancyConsts.IsEnabled;
-        });
+        //Configure<AbpMultiTenancyOptions>(options =>
+        //{
+        //    options.IsEnabled = MultiTenancyConsts.IsEnabled;
+        //});
 
 #if DEBUG
         context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, NullEmailSender>());

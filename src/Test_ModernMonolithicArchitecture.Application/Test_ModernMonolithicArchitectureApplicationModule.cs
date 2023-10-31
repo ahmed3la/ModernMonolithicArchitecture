@@ -12,13 +12,13 @@ namespace Test_ModernMonolithicArchitecture;
 
 [DependsOn(
     typeof(Test_ModernMonolithicArchitectureDomainModule),
-    typeof(AbpAccountApplicationModule),
-    typeof(Test_ModernMonolithicArchitectureApplicationContractsModule),
-    typeof(AbpIdentityApplicationModule),
-    typeof(AbpPermissionManagementApplicationModule),
-    typeof(AbpTenantManagementApplicationModule),
-    typeof(AbpFeatureManagementApplicationModule),
-    typeof(AbpSettingManagementApplicationModule)
+    //typeof(AbpAccountApplicationModule),
+    typeof(Test_ModernMonolithicArchitectureApplicationContractsModule)
+    //typeof(AbpIdentityApplicationModule),
+    //typeof(AbpPermissionManagementApplicationModule),
+    //typeof(AbpTenantManagementApplicationModule),
+    //typeof(AbpFeatureManagementApplicationModule),
+    //typeof(AbpSettingManagementApplicationModule)
     )]
 [DependsOn(typeof(ProductCatalogApplicationModule))]
     public class Test_ModernMonolithicArchitectureApplicationModule : AbpModule
