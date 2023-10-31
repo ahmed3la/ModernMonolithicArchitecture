@@ -22,5 +22,8 @@ public class ProductCatalogHttpApiClientModule : AbpModule
             options.FileSets.AddEmbedded<ProductCatalogHttpApiClientModule>();
         });
 
+
+
+
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ProductCatalog.Samples;
 
-public class SampleAppService : ProductCatalogAppService, ISampleAppService
+public class SampleAppService : ProductCatalogAppService
 {
     public Task<SampleDto> GetAsync()
     {

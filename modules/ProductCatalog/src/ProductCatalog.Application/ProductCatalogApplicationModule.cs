@@ -20,5 +20,7 @@ public class ProductCatalogApplicationModule : AbpModule
         {
             options.AddMaps<ProductCatalogApplicationModule>(validate: true);
         });
+
+
     }
 }

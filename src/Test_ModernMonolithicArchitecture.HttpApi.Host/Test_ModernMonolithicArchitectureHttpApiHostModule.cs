@@ -28,6 +28,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
+using ProductCatalog;
 
 namespace Test_ModernMonolithicArchitecture;
 
@@ -131,6 +132,12 @@ public class Test_ModernMonolithicArchitectureHttpApiHostModule : AbpModule
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
             options.ConventionalControllers.Create(typeof(Test_ModernMonolithicArchitectureApplicationModule).Assembly);
+        });
+
+
+        Configure<AbpAspNetCoreMvcOptions>(options =>
+        {
+            options.ConventionalControllers.Create(typeof(ProductCatalogApplicationModule).Assembly);
         });
     }
 

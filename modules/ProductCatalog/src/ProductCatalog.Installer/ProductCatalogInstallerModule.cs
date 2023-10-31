@@ -14,5 +14,7 @@ public class ProductCatalogInstallerModule : AbpModule
         {
             options.FileSets.AddEmbedded<ProductCatalogInstallerModule>();
         });
+
+
     }
 }

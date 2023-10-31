@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Mappings;
+using System.Reflection.Emit;
 using Volo.Abp;
 
 namespace ProductCatalog.EntityFrameworkCore;
@@ -10,24 +12,8 @@ public static class ProductCatalogDbContextModelCreatingExtensions
     {
         Check.NotNull(builder, nameof(builder));
 
-        /* Configure all entities here. Example:
+        builder.ApplyConfiguration(new Mappings.ProductMapping());
 
-        builder.Entity<Question>(b =>
-        {
-            //Configure table & schema name
-            b.ToTable(ProductCatalogDbProperties.DbTablePrefix + "Questions", ProductCatalogDbProperties.DbSchema);
-
-            b.ConfigureByConvention();
-
-            //Properties
-            b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-
-            //Relations
-            b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
-
-            //Indexes
-            b.HasIndex(q => q.CreationTime);
-        });
-        */
+ 
     }
 }
