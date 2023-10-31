@@ -1,0 +1,8 @@
+﻿using Volo.Abp;
+
+namespace Test_ModernMonolithicArchitecture.EntityFrameworkCore;
+
+public abstract class Test_ModernMonolithicArchitectureEntityFrameworkCoreTestBase : Test_ModernMonolithicArchitectureTestBase<Test_ModernMonolithicArchitectureEntityFrameworkCoreTestModule>
+{
+
+}

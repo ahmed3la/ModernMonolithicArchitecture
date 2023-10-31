@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "ProductCatalog.Domain.Shared": {
+      "path": "src/ProductCatalog.Domain.Shared/ProductCatalog.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.Domain": {
+      "path": "src/ProductCatalog.Domain/ProductCatalog.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.Application.Contracts": {
+      "path": "src/ProductCatalog.Application.Contracts/ProductCatalog.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.Application": {
+      "path": "src/ProductCatalog.Application/ProductCatalog.Application.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.EntityFrameworkCore": {
+      "path": "src/ProductCatalog.EntityFrameworkCore/ProductCatalog.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.MongoDB": {
+      "path": "src/ProductCatalog.MongoDB/ProductCatalog.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.HttpApi": {
+      "path": "src/ProductCatalog.HttpApi/ProductCatalog.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.HttpApi.Client": {
+      "path": "src/ProductCatalog.HttpApi.Client/ProductCatalog.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.TestBase": {
+      "path": "test/ProductCatalog.TestBase/ProductCatalog.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "ProductCatalog.EntityFrameworkCore.Tests": {
+      "path": "test/ProductCatalog.EntityFrameworkCore.Tests/ProductCatalog.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ProductCatalog.MongoDB.Tests": {
+      "path": "test/ProductCatalog.MongoDB.Tests/ProductCatalog.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ProductCatalog.Domain.Tests": {
+      "path": "test/ProductCatalog.Domain.Tests/ProductCatalog.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ProductCatalog.Application.Tests": {
+      "path": "test/ProductCatalog.Application.Tests/ProductCatalog.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ProductCatalog.HttpApi.Host": {
+      "path": "host/ProductCatalog.HttpApi.Host/ProductCatalog.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ProductCatalog.Web": {
+      "path": "src/ProductCatalog.Web/ProductCatalog.Web.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/ProductCatalog.HttpApi.Client.ConsoleTestApp/ProductCatalog.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "ProductCatalog.Web.Host": {
+      "path": "host/ProductCatalog.Web.Host/ProductCatalog.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ProductCatalog.AuthServer": {
+      "path": "host/ProductCatalog.AuthServer/ProductCatalog.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "ProductCatalog.Host.Shared": {
+      "path": "host/ProductCatalog.Host.Shared/ProductCatalog.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "ProductCatalog.Web.Unified": {
+      "path": "host/ProductCatalog.Web.Unified/ProductCatalog.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "ProductCatalog.Blazor": {
+      "path": "src/ProductCatalog.Blazor/ProductCatalog.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.Blazor.Host": {
+      "path": "host/ProductCatalog.Blazor.Host/ProductCatalog.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ProductCatalog.Blazor.Server": {
+      "path": "src/ProductCatalog.Blazor.Server/ProductCatalog.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.Blazor.WebAssembly": {
+      "path": "src/ProductCatalog.Blazor.WebAssembly/ProductCatalog.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "ProductCatalog.Blazor.Server.Host": {
+      "path": "host/ProductCatalog.Blazor.Server.Host/ProductCatalog.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

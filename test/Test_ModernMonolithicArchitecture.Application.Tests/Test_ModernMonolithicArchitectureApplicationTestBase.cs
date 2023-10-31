@@ -1,0 +1,6 @@
+﻿namespace Test_ModernMonolithicArchitecture;
+
+public abstract class Test_ModernMonolithicArchitectureApplicationTestBase : Test_ModernMonolithicArchitectureTestBase<Test_ModernMonolithicArchitectureApplicationTestModule>
+{
+
+}

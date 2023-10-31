@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+        <RootNamespace>ProductCatalog</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="7.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="..\..\ProductCatalog.abpmdl.json" />
+      <Content Include="..\..\ProductCatalog.abpmdl.json">
+        <Pack>true</Pack>
+        <PackagePath>content\</PackagePath>
+      </Content>
+    </ItemGroup>
+
+</Project>
