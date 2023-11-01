@@ -1,0 +1,46 @@
+
+
+
+abp new ModernMonolithicArchitecture --no-ui 
+
+Server=.;Database=ModernMonolithicArchitecture;User Id=sa;Password=Aa@123456@;Trusted_Connection=False;TrustServerCertificate=True
+
+
+in Host project add 
+--------------------
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+---------------------------
+#Run command
+ dotnet-ef migrations  add 'init'   --startup-project "D:\code\Modern Monolithic Architecture\aspnet-core\aspnet-core\src\ModernMonolithicArchitecture.HttpApi.Host\ModernMonolithicArchitecture.HttpApi.Host.csproj"
+
+Add Assembly: Microsoft.EntityFrameworkCore.SqlServer 
+              Microsoft.EntityFrameworkCore.Design  to HttpApi.Host
+---------------------------
+Product Catalog Module        --> ProductCatalog
+Shopping Cart Module          --> ShoppingCart
+Order Management Module       --> OrderManagement
+Payment Processing Module     --> Payment
+
+-------------------
+abp add-module ProductCatalog --new --add-to-solution-file
+abp add-module ShoppingCart --new --add-to-solution-file
+abp add-module OrderManagement --new --add-to-solution-file
+abp add-module Payment --new --add-to-solution-file
+-------------------
+Commit code in:
+ EntityFrameworkCore\Test_ModernMonolithicArchitectureEntityFrameworkCoreModule.cs
+ as below:
+//context.Services.AddAbpDbContext<Test_ModernMonolithicArchitectureDbContext>(options =>
+        //{
+        //        /* Remove "includeAllEntities: true" to create
+        //         * default repositories only for aggregate roots */
+        //    //options.AddDefaultRepositories(includeAllEntities: true);
+        //});
+-------------------
+
+
