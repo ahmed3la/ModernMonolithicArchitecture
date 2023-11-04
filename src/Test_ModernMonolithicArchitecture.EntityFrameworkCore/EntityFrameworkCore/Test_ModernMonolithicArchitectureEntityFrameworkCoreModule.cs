@@ -13,6 +13,7 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using ProductCatalog.EntityFrameworkCore;
+using ShoppingCart.EntityFrameworkCore;
 
 namespace Test_ModernMonolithicArchitecture.EntityFrameworkCore;
 
@@ -29,6 +30,7 @@ namespace Test_ModernMonolithicArchitecture.EntityFrameworkCore;
     //typeof(AbpFeatureManagementEntityFrameworkCoreModule)
     )]
 [DependsOn(typeof(ProductCatalogEntityFrameworkCoreModule))]
+    [DependsOn(typeof(ShoppingCartEntityFrameworkCoreModule))]
     public class Test_ModernMonolithicArchitectureEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

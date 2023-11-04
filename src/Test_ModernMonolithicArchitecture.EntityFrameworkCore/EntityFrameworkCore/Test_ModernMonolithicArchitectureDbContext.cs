@@ -13,6 +13,7 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using ProductCatalog.EntityFrameworkCore;
+using ShoppingCart.EntityFrameworkCore;
 
 namespace Test_ModernMonolithicArchitecture.EntityFrameworkCore;
 
@@ -84,5 +85,6 @@ public class Test_ModernMonolithicArchitectureDbContext :
         //    //...
         //});
         builder.ConfigureProductCatalog();
+            builder.ConfigureShoppingCart();
         }
 }

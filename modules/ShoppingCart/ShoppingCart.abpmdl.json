@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "ShoppingCart.Domain.Shared": {
+      "path": "src/ShoppingCart.Domain.Shared/ShoppingCart.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.Domain": {
+      "path": "src/ShoppingCart.Domain/ShoppingCart.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.Application.Contracts": {
+      "path": "src/ShoppingCart.Application.Contracts/ShoppingCart.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.Application": {
+      "path": "src/ShoppingCart.Application/ShoppingCart.Application.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.EntityFrameworkCore": {
+      "path": "src/ShoppingCart.EntityFrameworkCore/ShoppingCart.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.MongoDB": {
+      "path": "src/ShoppingCart.MongoDB/ShoppingCart.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.HttpApi": {
+      "path": "src/ShoppingCart.HttpApi/ShoppingCart.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.HttpApi.Client": {
+      "path": "src/ShoppingCart.HttpApi.Client/ShoppingCart.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.TestBase": {
+      "path": "test/ShoppingCart.TestBase/ShoppingCart.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "ShoppingCart.EntityFrameworkCore.Tests": {
+      "path": "test/ShoppingCart.EntityFrameworkCore.Tests/ShoppingCart.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ShoppingCart.MongoDB.Tests": {
+      "path": "test/ShoppingCart.MongoDB.Tests/ShoppingCart.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ShoppingCart.Domain.Tests": {
+      "path": "test/ShoppingCart.Domain.Tests/ShoppingCart.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ShoppingCart.Application.Tests": {
+      "path": "test/ShoppingCart.Application.Tests/ShoppingCart.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ShoppingCart.HttpApi.Host": {
+      "path": "host/ShoppingCart.HttpApi.Host/ShoppingCart.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ShoppingCart.Web": {
+      "path": "src/ShoppingCart.Web/ShoppingCart.Web.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/ShoppingCart.HttpApi.Client.ConsoleTestApp/ShoppingCart.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "ShoppingCart.Web.Host": {
+      "path": "host/ShoppingCart.Web.Host/ShoppingCart.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ShoppingCart.AuthServer": {
+      "path": "host/ShoppingCart.AuthServer/ShoppingCart.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "ShoppingCart.Host.Shared": {
+      "path": "host/ShoppingCart.Host.Shared/ShoppingCart.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "ShoppingCart.Web.Unified": {
+      "path": "host/ShoppingCart.Web.Unified/ShoppingCart.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "ShoppingCart.Blazor": {
+      "path": "src/ShoppingCart.Blazor/ShoppingCart.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.Blazor.Host": {
+      "path": "host/ShoppingCart.Blazor.Host/ShoppingCart.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ShoppingCart.Blazor.Server": {
+      "path": "src/ShoppingCart.Blazor.Server/ShoppingCart.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.Blazor.WebAssembly": {
+      "path": "src/ShoppingCart.Blazor.WebAssembly/ShoppingCart.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "ShoppingCart.Blazor.Server.Host": {
+      "path": "host/ShoppingCart.Blazor.Server.Host/ShoppingCart.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

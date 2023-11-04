@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Test_ModernMonolithicArchitecture.Domain.Shared\Test_ModernMonolithicArchitecture.Domain.Shared.csproj" />
-  <ProjectReference Include="..\..\modules\ProductCatalog\src\ProductCatalog.Domain\ProductCatalog.Domain.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\ProductCatalog\src\ProductCatalog.Domain\ProductCatalog.Domain.csproj" /><ProjectReference Include="..\..\modules\ShoppingCart\src\ShoppingCart.Domain\ShoppingCart.Domain.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Emailing" Version="7.4.1" />

@@ -29,6 +29,7 @@ using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 using ProductCatalog;
+using ShoppingCart;
 
 namespace Test_ModernMonolithicArchitecture;
 
@@ -133,12 +134,18 @@ public class Test_ModernMonolithicArchitectureHttpApiHostModule : AbpModule
         {
             options.ConventionalControllers.Create(typeof(Test_ModernMonolithicArchitectureApplicationModule).Assembly);
         });
-
-
+         
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
             options.ConventionalControllers.Create(typeof(ProductCatalogApplicationModule).Assembly);
         });
+         
+        Configure<AbpAspNetCoreMvcOptions>(options =>
+        {
+            options.ConventionalControllers.Create(typeof(ShoppingCartApplicationModule).Assembly);
+        });
+
+
     }
 
     private static void ConfigureSwaggerServices(ServiceConfigurationContext context, IConfiguration configuration)

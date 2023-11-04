@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Test_ModernMonolithicArchitecture.Domain\Test_ModernMonolithicArchitecture.Domain.csproj" />
     <ProjectReference Include="..\Test_ModernMonolithicArchitecture.Application.Contracts\Test_ModernMonolithicArchitecture.Application.Contracts.csproj" />
-  <ProjectReference Include="..\..\modules\ProductCatalog\src\ProductCatalog.Application\ProductCatalog.Application.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\ProductCatalog\src\ProductCatalog.Application\ProductCatalog.Application.csproj" /><ProjectReference Include="..\..\modules\ShoppingCart\src\ShoppingCart.Application\ShoppingCart.Application.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Account.Application" Version="7.4.1" />

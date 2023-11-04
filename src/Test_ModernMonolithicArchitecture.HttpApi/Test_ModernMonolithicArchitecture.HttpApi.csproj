@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Test_ModernMonolithicArchitecture.Application.Contracts\Test_ModernMonolithicArchitecture.Application.Contracts.csproj" />
-  <ProjectReference Include="..\..\modules\ProductCatalog\src\ProductCatalog.HttpApi\ProductCatalog.HttpApi.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\ProductCatalog\src\ProductCatalog.HttpApi\ProductCatalog.HttpApi.csproj" /><ProjectReference Include="..\..\modules\ShoppingCart\src\ShoppingCart.HttpApi\ShoppingCart.HttpApi.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Account.HttpApi" Version="7.4.1" />

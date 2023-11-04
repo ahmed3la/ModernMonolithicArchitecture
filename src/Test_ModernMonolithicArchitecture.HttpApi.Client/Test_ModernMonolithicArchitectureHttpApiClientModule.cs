@@ -8,6 +8,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.VirtualFileSystem;
 using ProductCatalog;
+using ShoppingCart;
 
 namespace Test_ModernMonolithicArchitecture;
 
@@ -21,6 +22,7 @@ namespace Test_ModernMonolithicArchitecture;
     typeof(AbpSettingManagementHttpApiClientModule)
 )]
 [DependsOn(typeof(ProductCatalogHttpApiClientModule))]
+    [DependsOn(typeof(ShoppingCartHttpApiClientModule))]
     public class Test_ModernMonolithicArchitectureHttpApiClientModule : AbpModule
 {
     public const string RemoteServiceName = "Default";

@@ -13,6 +13,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
 using ProductCatalog;
+using ShoppingCart;
 
 namespace Test_ModernMonolithicArchitecture;
 
@@ -27,6 +28,7 @@ namespace Test_ModernMonolithicArchitecture;
     typeof(AbpTenantManagementDomainSharedModule)    
     )]
 [DependsOn(typeof(ProductCatalogDomainSharedModule))]
+    [DependsOn(typeof(ShoppingCartDomainSharedModule))]
     public class Test_ModernMonolithicArchitectureDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

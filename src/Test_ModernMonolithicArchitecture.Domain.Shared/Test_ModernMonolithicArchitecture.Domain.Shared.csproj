@@ -18,7 +18,7 @@
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="7.4.1" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="7.4.1" />
     <PackageReference Include="Volo.Abp.OpenIddict.Domain.Shared" Version="7.4.1" />
-  <ProjectReference Include="..\..\modules\ProductCatalog\src\ProductCatalog.Domain.Shared\ProductCatalog.Domain.Shared.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\ProductCatalog\src\ProductCatalog.Domain.Shared\ProductCatalog.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\ShoppingCart\src\ShoppingCart.Domain.Shared\ShoppingCart.Domain.Shared.csproj" /></ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\Test_ModernMonolithicArchitecture\*.json" />

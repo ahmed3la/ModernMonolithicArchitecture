@@ -7,6 +7,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using ProductCatalog;
+using ShoppingCart;
 
 namespace Test_ModernMonolithicArchitecture;
 
@@ -21,6 +22,7 @@ namespace Test_ModernMonolithicArchitecture;
     typeof(AbpObjectExtendingModule)
 )]
 [DependsOn(typeof(ProductCatalogApplicationContractsModule))]
+    [DependsOn(typeof(ShoppingCartApplicationContractsModule))]
     public class Test_ModernMonolithicArchitectureApplicationContractsModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

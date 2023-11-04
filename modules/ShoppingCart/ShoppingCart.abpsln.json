@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "ShoppingCart": {
+      "path": "ShoppingCart.abpmdl.json"
+    }
+  }
+}
