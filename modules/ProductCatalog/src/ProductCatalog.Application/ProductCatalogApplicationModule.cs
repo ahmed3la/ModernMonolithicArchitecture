@@ -2,6 +2,9 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
+using SharedCaching; 
+using SharedCaching.CachingProducts;
+using SharedCaching.ICachingProducts;
 
 namespace ProductCatalog;
 
@@ -9,12 +12,16 @@ namespace ProductCatalog;
     typeof(ProductCatalogDomainModule),
     typeof(ProductCatalogApplicationContractsModule),
     typeof(AbpDddApplicationModule),
-    typeof(AbpAutoMapperModule)
+    typeof(AbpAutoMapperModule),
+    typeof(CachingModule)
     )]
 public class ProductCatalogApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
+        context.Services.AddScoped<ICachingProduct, CachingProduct>();
+
+
         context.Services.AddAutoMapperObjectMapper<ProductCatalogApplicationModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {

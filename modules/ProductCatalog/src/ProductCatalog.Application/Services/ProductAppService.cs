@@ -2,11 +2,12 @@
 using ProductCatalog.IRepository;
 using ProductCatalog.IServices;
 using ProductCatalog.ProductEntities;
+using SharedCaching.ICachingProducts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks; 
 using Volo.Abp.Application.Dtos;
 
 namespace ProductCatalog.Services
@@ -14,10 +15,15 @@ namespace ProductCatalog.Services
     public class ProductAppService : ProductCatalogAppService, IProductAppService
     {
         private readonly IProductRepository _productRepository;
+        private readonly ICachingProduct cachingProduct;
 
-        public ProductAppService(IProductRepository productRepository)
+        public ProductAppService(IProductRepository productRepository
+            ,ICachingProduct cachingProduct
+            )
         {
+            
             _productRepository = productRepository;
+            this.cachingProduct = cachingProduct;
         }
         //[Area(ProductCatalogRemoteServiceConsts.ModuleName)]
         //[RemoteService(Name = ProductCatalogRemoteServiceConsts.RemoteServiceName)]
@@ -34,7 +40,10 @@ namespace ProductCatalog.Services
             await _productRepository.InsertAsync(product);
             return ObjectMapper.Map<Product, ProductDto>(product);
         }
-
+        public string Test()
+        {
+            return cachingProduct.GetProductName();
+        }
         public async Task<ProductDto> GetAsync(Guid id)
         {
             var product = await _productRepository.GetAsync(id);
