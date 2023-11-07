@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace SharedCaching.Contracts.CacheDTOs;
 
-namespace SharedCaching.Contracts.CacheDTOs
+public class ProductCacheEvent
 {
-    public class ProductCache
-    {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public float Price { get; set; }
-    }
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
 }

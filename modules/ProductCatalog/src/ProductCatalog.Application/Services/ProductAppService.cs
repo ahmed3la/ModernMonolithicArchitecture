@@ -2,6 +2,7 @@
 using ProductCatalog.IRepository;
 using ProductCatalog.IServices;
 using ProductCatalog.ProductEntities;
+using SharedCaching.Contracts.CacheDTOs;
 using SharedCaching.ICachingProducts;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks; 
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.EventBus.Local;
+using Volo.Abp.Guids;
+using Volo.Abp.ObjectMapping;
 
 namespace ProductCatalog.Services
 {
@@ -16,34 +20,56 @@ namespace ProductCatalog.Services
     {
         private readonly IProductRepository _productRepository;
         private readonly ICachingProduct cachingProduct;
+        private readonly ILocalEventBus localEventBus;
+        private readonly IGuidGenerator guidGenerator; 
 
         public ProductAppService(IProductRepository productRepository
-            ,ICachingProduct cachingProduct
+            ,ICachingProduct cachingProduct,
+            ILocalEventBus localEventBus,
+            IGuidGenerator guidGenerator  
             )
         {
             
             _productRepository = productRepository;
             this.cachingProduct = cachingProduct;
+            this.localEventBus = localEventBus;
+            this.guidGenerator = guidGenerator; 
         }
         //[Area(ProductCatalogRemoteServiceConsts.ModuleName)]
         //[RemoteService(Name = ProductCatalogRemoteServiceConsts.RemoteServiceName)]
         //[Route("api/ProductCatalog/sample")]
         public async Task<ProductDto> CreateAsync(CreateUpdateProductDto input)
         {
+            var id = guidGenerator.Create();
             var product = new Product(
-                Guid.NewGuid(), // Simplified ID generation
+                id, // Simplified ID generation
                 input.Name,
                 input.Description,
                 input.Price
             );
 
             await _productRepository.InsertAsync(product);
-            return ObjectMapper.Map<Product, ProductDto>(product);
+
+            await localEventBus.PublishAsync(
+                new ProductCacheEvent
+                {
+                    Id = id,
+                    Name = input.Name,
+                    Price = input.Price
+                }
+            );
+            //return new ProductDto { Id = product.Id };
+            try
+            {
+                return ObjectMapper.Map<Product, ProductDto>(product);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            } 
         }
-        public string Test()
-        {
-            return cachingProduct.GetProductName();
-        }
+        
         public async Task<ProductDto> GetAsync(Guid id)
         {
             var product = await _productRepository.GetAsync(id);

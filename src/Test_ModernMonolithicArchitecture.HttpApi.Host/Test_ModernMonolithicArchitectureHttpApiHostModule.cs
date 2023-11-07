@@ -30,6 +30,7 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 using ProductCatalog;
 using ShoppingCart;
+using Volo.Abp.AutoMapper;
 
 namespace Test_ModernMonolithicArchitecture;
 
@@ -71,6 +72,12 @@ public class Test_ModernMonolithicArchitectureHttpApiHostModule : AbpModule
         ConfigureVirtualFileSystem(context);
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
+        
+        context.Services.AddAutoMapperObjectMapper<ProductCatalogApplicationModule>();
+        Configure<AbpAutoMapperOptions>(options =>
+        {
+            options.AddMaps<ProductCatalogApplicationModule>(validate: true);
+        });
     }
 
     private void ConfigureAuthentication(ServiceConfigurationContext context)

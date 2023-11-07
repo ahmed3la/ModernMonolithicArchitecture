@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ProductCatalog.DTOs;
 using ProductCatalog.ProductEntities;
+using Volo.Abp.AutoMapper;
 
 namespace ProductCatalog;
 

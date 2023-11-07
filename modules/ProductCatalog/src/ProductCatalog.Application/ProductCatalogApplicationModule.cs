@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.AutoMapper;
-using Volo.Abp.Modularity;
-using Volo.Abp.Application;
-using SharedCaching; 
+using SharedCaching;
 using SharedCaching.CachingProducts;
 using SharedCaching.ICachingProducts;
+using Volo.Abp.Application;
+using Volo.Abp.AutoMapper;
+using Volo.Abp.Modularity;
 
 namespace ProductCatalog;
 
@@ -19,7 +19,7 @@ public class ProductCatalogApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddScoped<ICachingProduct, CachingProduct>();
+        context.Services.AddScoped<ICachingProduct, CachingProduct>(); 
 
 
         context.Services.AddAutoMapperObjectMapper<ProductCatalogApplicationModule>();
@@ -28,6 +28,9 @@ public class ProductCatalogApplicationModule : AbpModule
             options.AddMaps<ProductCatalogApplicationModule>(validate: true);
         });
 
-
     }
+
+     
+
+
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharedCaching.Contracts.CacheDTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace SharedCaching.ICachingProducts
 {
     public interface ICachingProduct
     {
-        public string GetProductName();
+        Task<ProductCacheEvent> GetAsync(Guid bookId);
     }
 }
