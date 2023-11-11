@@ -1,4 +1,5 @@
 ﻿using ProductCatalog.IServices;
+using SharedCaching.ICachingProducts;
 using ShoppingCart.DTOs;
 using ShoppingCart.IAppService;
 using System;
@@ -13,17 +14,22 @@ namespace Test_ModernMonolithicArchitecture.ACLServices
 
         private readonly ICartAppService cartAppService;
         private readonly IProductAppService productAppService;
+        private readonly ICachingProduct cachingProduct;
 
         public AclShoppingCart(
         ICartAppService cartAppService,
-        IProductAppService productAppService)
+        IProductAppService productAppService,
+        ICachingProduct cachingProduct)
         {
             this.cartAppService = cartAppService;
             this.productAppService = productAppService;
+            this.cachingProduct = cachingProduct;
         }
 
         public async Task<CartDto> AddItemAsync(Guid ownerId, Guid cartId, Guid productId, int quantity)
         {
+            //var x = await cachingProduct.GetAsync(); 
+
             var product = await productAppService.GetAsync(productId)
                 ?? throw new UserFriendlyException("The product not exist");
 
@@ -32,7 +38,7 @@ namespace Test_ModernMonolithicArchitecture.ACLServices
             //
             cart.ShoppingCartItems.Last().ProductName = product.Name;
             //try exception
-            await productAppService.DeleteAsync(productId);
+            //await productAppService.DeleteAsync(productId);
             
             return cart;
         }

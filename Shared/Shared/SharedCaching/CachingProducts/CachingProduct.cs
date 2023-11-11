@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
+using SharedCaching.Contracts;
 using SharedCaching.Contracts.CacheDTOs;
 using SharedCaching.ICachingProducts;
 using System;
@@ -19,19 +20,17 @@ namespace SharedCaching.CachingProducts
         {
             _cache = cache;
         }
-        public async Task<ProductCacheEvent> GetAsync(Guid bookId)
+
+        public async Task<ProductCacheEvent> GetAsync()
         {
             return await _cache.GetOrAddAsync(
-                bookId.ToString(), //Cache key
-                async () => await GetBookFromDatabaseAsync(bookId),
-                () => new DistributedCacheEntryOptions
-                {
-                    AbsoluteExpiration = DateTimeOffset.Now.AddHours(1)
-                }
+                CacheKey.ProductKey.ToString()
+                , async () => await GetBookFromDatabaseAsync(),
+                () => new DistributedCacheEntryOptions()
             );
         }
 
-        private Task<ProductCacheEvent> GetBookFromDatabaseAsync(Guid bookId)
+        private Task<ProductCacheEvent> GetBookFromDatabaseAsync()
         {
             var data = new ProductCacheEvent { Name = "", Price = 10,Id=Guid.NewGuid() };
 
@@ -39,9 +38,10 @@ namespace SharedCaching.CachingProducts
         }
 
     }
+
     public class BookCacheItem
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         public float Price { get; set; }
     }

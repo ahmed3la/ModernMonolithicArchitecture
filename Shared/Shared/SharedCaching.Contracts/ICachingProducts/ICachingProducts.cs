@@ -9,6 +9,6 @@ namespace SharedCaching.ICachingProducts
 {
     public interface ICachingProduct
     {
-        Task<ProductCacheEvent> GetAsync(Guid bookId);
+        Task<ProductCacheEvent> GetAsync();
     }
 }
