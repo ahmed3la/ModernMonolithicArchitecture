@@ -9,5 +9,6 @@ namespace ShoppingCart.IRepository
     public interface IShoppingCartRepository : IRepository<Cart, Guid>
     {
         Task<Cart?> GetByOwnerAsync(Guid ownerId);
+        Task<Cart> GetAsync(Guid id);
     }
 }

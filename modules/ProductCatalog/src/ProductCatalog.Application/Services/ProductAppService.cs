@@ -73,7 +73,15 @@ namespace ProductCatalog.Services
         public async Task<ProductDto> GetAsync(Guid id)
         {
             var product = await _productRepository.GetAsync(id);
-            return ObjectMapper.Map<Product, ProductDto>(product);
+            return new ProductDto()
+            {
+                Id = id,
+                Name = product.Name,
+                Price = product.Price
+            };
+
+
+            //return ObjectMapper.Map<Product, ProductDto>(product);
         }
 
         public async Task<ListResultDto<ProductDto>> GetAllAsync()
@@ -95,6 +103,8 @@ namespace ProductCatalog.Services
 
         public async Task DeleteAsync(Guid id)
         {
+            throw new Exception("Error");
+
             await _productRepository.DeleteAsync(id);
         }
     }

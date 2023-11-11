@@ -9,7 +9,7 @@ public interface ICartAppService : IApplicationService
 {
     Task<CartDto> GetAsync(Guid cartId);
 
-    Task<CartDto> AddItemAsync(Guid cartId, Guid productId, int quantity, decimal price);
+    Task<CartDto> AddItemAsync(Guid ownerId, Guid cartId, Guid productId, int quantity, decimal price);
 
 
 

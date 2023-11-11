@@ -9,11 +9,7 @@ namespace ProductCatalog.IRepository
 {
     public interface IProductRepository : IRepository<Product, Guid>
     {
-        public interface IProductRepository : IRepository<Product, Guid>
-        {
-            Task<List<Product>> GetListAsync();
-        }
+        Task<List<Product>> GetListAsync();
 
-         
     }
 }

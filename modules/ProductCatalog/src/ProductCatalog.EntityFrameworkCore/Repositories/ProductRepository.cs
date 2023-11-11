@@ -24,10 +24,11 @@ namespace ProductCatalog.Repositories
         {
             var dbContext = await GetDbContextAsync();
 
-            var result = await dbContext.Products.ToListAsync();
+            var result = await dbContext.Products
+                .AsNoTracking()
+                .ToListAsync();
 
             return result;
-
         }
 
 

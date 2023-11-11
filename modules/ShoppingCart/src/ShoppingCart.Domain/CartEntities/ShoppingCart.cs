@@ -25,6 +25,16 @@ namespace ShoppingCart.CartEntities
             // Implement logic to add items to the shopping cart.
             // Ensure business rules are enforced, e.g., checking product availability.
             _items.Add(new ShoppingCartItem(itemId, cartId, productId, quantity, price));
-        } 
+        }
+        public Cart AddCard(Guid cartId)
+        {
+            // Implement logic to add items to the shopping cart.
+            // Ensure business rules are enforced, e.g., checking product availability.
+            Id = cartId;
+            
+            return this;
+        }
+
+
     }
 }
