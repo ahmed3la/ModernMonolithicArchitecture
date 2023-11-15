@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Caching.Distributed;
+﻿using Microsoft.AspNetCore.Mvc.Diagnostics;
+using Microsoft.Extensions.Caching.Distributed;
+using SharedCaching.Contracts;
 using SharedCaching.Contracts.CacheDTOs;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Caching;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EventBus;
-
+using Volo.Abp.Threading;
 
 namespace SharedCaching.CachingProducts.EventHandlers
 {
@@ -18,35 +20,18 @@ namespace SharedCaching.CachingProducts.EventHandlers
           ITransientDependency
     {
         private readonly IDistributedCache<ProductCacheEvent> cache;
+
         public ProductCacheHandler(IDistributedCache<ProductCacheEvent> cache)
         {
             this.cache = cache;
         }
 
+        public IDistributedCache<ProductCacheEvent, ProductCacheEvent> Cache { get; }
+
+         
         public async Task HandleEventAsync(ProductCacheEvent eventData)
-        {
-
-            //var cacheKey = "YourUniqueCacheKey"; // Replace with your unique cache key.
-
-            //var IsCashExist = cache.Get(cacheKey); // Cache for 30 minutes (adjust the expiration time as needed).
-            //if (IsCashExist != null)
-            //{
-            //    await cache.SetAsync(
-            //    cacheKey.ToString(), //Cache key
-            //    eventData);
-            //}
-            //else
-            //{
-            //    var x = await cache.GetOrAddAsync(
-            //        cacheKey.ToString(), //Cache key
-            //        async () => await Task.FromResult(eventData),
-            //        () => new DistributedCacheEntryOptions
-            //        {
-            //            AbsoluteExpiration = DateTimeOffset.Now.AddHours(1)
-            //        }
-            //    );
-            //}
-
+        {  
+            await cache.SetAsync(eventData.ToString(), eventData); 
         }
 
     }

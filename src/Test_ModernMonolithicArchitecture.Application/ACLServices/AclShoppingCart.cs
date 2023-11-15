@@ -28,10 +28,10 @@ namespace Test_ModernMonolithicArchitecture.ACLServices
 
         public async Task<CartDto> AddItemAsync(Guid ownerId, Guid cartId, Guid productId, int quantity)
         {
-            //var x = await cachingProduct.GetAsync(); 
+            var product = await cachingProduct.GetAsync(productId); 
 
-            var product = await productAppService.GetAsync(productId)
-                ?? throw new UserFriendlyException("The product not exist");
+            //var product = await productAppService.GetAsync(productId)
+            //    ?? throw new UserFriendlyException("The product not exist");
 
             var cart = await cartAppService.AddItemAsync(ownerId, cartId, productId, quantity, product.Price)
                 ?? throw new UserFriendlyException("The product was not added");

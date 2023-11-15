@@ -58,16 +58,16 @@ namespace ProductCatalog.Services
                     Price = input.Price
                 }
             );
-            //return new ProductDto { Id = product.Id };
-            try
-            {
-                return ObjectMapper.Map<Product, ProductDto>(product);
-            }
-            catch (Exception ex)
-            {
+            return new ProductDto { Id = product.Id };
+            //try
+            //{
+            //    return ObjectMapper.Map<Product, ProductDto>(product);
+            //}
+            //catch (Exception ex)
+            //{
 
-                throw;
-            } 
+            //    throw;
+            //} 
         }
         
         public async Task<ProductDto> GetAsync(Guid id)
